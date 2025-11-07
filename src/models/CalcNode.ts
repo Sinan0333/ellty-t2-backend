@@ -15,7 +15,7 @@ export interface ICalcNode extends Document {
 const CalcNodeSchema = new Schema<ICalcNode>({
   value: { type: Number, required: true },
   parent: { type: Schema.Types.ObjectId, ref: "CalcNode", default: null },
-  operationType: { type: String, enum: ["+", "-", "*", "/"], default: null },
+  operationType: { type: String, enum: ["+", "-", "*", "/", null], default: null },
   operand: { type: Number, default: null },
   author: { type: Schema.Types.ObjectId, ref: "User", required: true },
   createdAt: { type: Date, default: Date.now },
